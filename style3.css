@@ -403,8 +403,10 @@ html, body, #menu{
     transform: translate(-50%, -50%);
 }
 /*☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣*/
-#p14 .p_data, #p14 .p_images, #p15 .p_data, #p15 .p_images{
+#p14 .p_data, #p15 .p_data{
     margin-left: 0.5rem;
+}
+#p14 .p_images, #p15 .p_images{
     margin-right: 0.5rem;
 }
 /*☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣*/
