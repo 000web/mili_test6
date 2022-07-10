@@ -1,0 +1,827 @@
+/* ⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙ */
+/* ⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙ */
+/* ⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙ */
+/* IMPORTANT FOR MOBILE VISUALIZATION */
+@viewport{
+    zoom: 1.0;
+    width: extend-to-zoom;
+}
+@-ms-viewport{
+    width: extend-to-zoom;
+    zoom: 1.0
+}
+/* END IMPORTANT FOR MOBILE VISUALIZATION */
+/* ⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙ */
+/* ⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙ */
+/* ⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙ */
+
+
+/* ⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙ */
+/* ⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙ */
+/* ⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙ */
+/* WHOLE MENU GRID */
+*{
+    margin: 0rem;
+    /*border: 1px solid chartreuse;*/
+}
+html, body, #menu{
+    margin: 0px;
+}
+#menu{
+    width: 100%;
+    display: grid;
+    grid-gap: 1rem; /* Gap between each product section */
+    /*height: 1300vh;*/ /* Better not to specify height, so it is automatically adjusted */
+    grid-template-columns: 1fr;
+    /*grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;*/ /* Better not to specify height of each section, otherwise content is overlapped */
+    grid-template-areas:
+    "header"
+    "p1"  /*CERVEZA*/                                    /*☢☢☢*/
+    "p2"  /*MOJITOS*/
+    "p3"  /*PIÑA COLADA*/
+    "p4"  /*FRAPPÉ DE VINO*/
+    "p5"  /*CHAMOYADAS*/
+    "p6"  /*CLAMATO PREPARADO*/
+    "p7"  /*MARGARITAS FRAPPÉ*/
+    "p8"  /*CUBA*/
+    "p9"  /*PALOMA*/
+    "p10" /*BLUE LOVE*/
+    "p11" /*CARIBEÑAS*/
+    "p12" /*CARAJILLOS*/
+    "p13" /*VARIOS*/                                     /*☢☢☢*/
+    "p14" /*CUBETAS*/                                                  /*☣☣☣*/
+    "p15" /*TOPPING APARTE*/                                           /*☣☣☣*/
+    "p16" /*TOPPING (black background)*/                 /*☉☉☉*/
+    "mariscos" /*MARISCOS SINALOENSES (title)*/                        /*☗☗☗*/
+    "p17" /*AGUACHILE*/
+    "p18" /*CEVICHE*/
+    "p19" /*CAMARÓN PARA PELAR*/
+    "p20" /*CULICHIS*/
+    "p21" /*TORRES*/                                                   /*☗☗☗*/
+    "foot";
+    /*☣☣☣*/
+    font-family: Poppins;
+    width: 100%; /* It is displayed over the whole width, always that html, body and this section have 0 margin */
+}
+#header{grid-area: header;}
+#p1{grid-area: p1;}                                       /*☢☢☢*/
+#p2{grid-area: p2;}
+#p3{grid-area: p3;}
+#p4{grid-area: p4;}
+#p5{grid-area: p5;}
+#p6{grid-area: p6;}
+#p7{grid-area: p7;}
+#p8{grid-area: p8;}
+#p9{grid-area: p9;}
+#p1{grid-area: p1;}
+#p10{grid-area: p10;}
+#p11{grid-area: p11;}
+#p12{grid-area: p12;}
+#p13{grid-area: p13;}                                     /*☢☢☢*/
+#p14{grid-area: p14}                                                  /*☣☣☣*/
+#p15{grid-area: p15;}                                                 /*☣☣☣*/
+#p16{grid-area: p16;}                                     /*☉☉☉*/
+#mariscos{grid-area: mariscos;}                                       /*☗☗☗*/
+#p17{grid-area: p17;}
+#p18{grid-area: p18;}
+#p19{grid-area: p19;}
+#p20{grid-area: p20;}
+#p21{grid-area: p21;}                                                 /*☗☗☗*/
+#foot{grid-area: foot;}
+/* END WHOLE MENU GRID */
+/* ⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙ */
+/* ⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙ */
+/* ⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙ */
+
+
+/* ⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙ */
+/* ⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙ */
+/* ⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙ */
+/* MENU HEADER */
+#header{
+    background-image: url("wood.jpg");
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
+    box-shadow: 0px 0px 50px 2rem #371a0b;
+}
+.logo{
+    width: 100px;
+    display: block;
+}
+.logo_container{
+    height: 100px;
+    box-shadow: 0px 0px 50px 5px black;
+}
+.menu_title{
+    color: white;
+    font-size: 3rem;
+    font-weight: 600;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    background-color: black;
+    border-radius: 1rem;
+    /*box-shadow: 0px 0px 5px 4px #be1a0e;*/
+    border-bottom: 5px solid white;
+    border-top: 5px solid white;
+    border-left: 2px solid #be1a0e;
+    border-right: 2px solid #be1a0e;
+}
+.title_container{
+    text-align: center;
+}
+/* END MENU HEADER */
+/* ⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙ */
+/* ⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙ */
+/* ⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙ */
+
+
+/* ⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙ */
+/* ⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙ */
+/* ⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙ */
+/* PRODUCTS GENERAL STRUCTURE */
+#p1, #p2, #p3, #p4, #p5, #p6, #p7, #p8, #p9, #p10, #p11, #p12, #p13{
+    /*PRODUCT GENERAL CONTAINERS*/
+    display: grid;
+    grid-gap: 0.5rem;
+    grid-template-columns: 8fr 7fr;
+    /*grid-template-rows: 1fr;*/ /* Not required */
+    grid-template-areas:
+    "p_data p_images";
+    /*☣☣☣*/
+    font-family: Poppins;
+    padding: 0.5rem;
+}
+.p_data{grid-area: p_data;}
+.p_images{grid-area: p_images;}
+
+/*☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣*/
+#p14, #p15{
+    /*CUBETAS (p14) / TOPPING APARTE (p15) CONTAINERS*/
+    display: grid;
+    grid-gap: 0.5rem;
+    grid-template-columns: 8fr 7fr;
+    grid-template-areas:
+    "p_header p_header"
+    "p_data p_images";
+    /*☣☣☣*/
+    font-family: Poppins;
+}
+.p_header{grid-area: p_header;} /*Same <p_data> and <p_images> as --PRODUCT GENERAL CONTAINERS--*/
+/*☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣*/
+#p16{
+    /* TOPPING (black background) (p16) CONTAINER */
+    display: grid;
+    grid-gap: 0.5rem;
+    grid-template-columns: 15fr;
+    grid-template-areas:
+    "p_header"
+    "topping_section";
+    /*☣☣☣*/
+    background-color: black;
+    /*☣☣☣*/
+    font-family: Poppins;
+}
+.topping_section{grid-area: topping_section;} /*Same <p_header> as --CUBETAS / TOPPING APARTE CONTAINERS--*/
+/*☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣*/
+#p17, #p18, #p19, #p20, #p21{
+    /*MARISCOS SINALOENSES CONTAINERS*/
+    display: grid;
+    grid-gap: 0.5rem;
+    grid-template-columns: 8fr 7fr;
+    grid-template-areas:
+    "p_images p_data";
+    /*☣☣☣*/
+    font-family: Poppins;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+}
+/* END PRODUCTS GENERAL STRUCTURE */
+/* ⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙ */
+/* ⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙ */
+/* ⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙ */
+
+
+/* ⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙ */
+/* ⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙ */
+/* ⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙ */
+/* PRODUCTS PARTICULAR STRUCTURE */
+#p1 h1, #p2 h1, #p3 h1, #p4 h1, #p5 h1, #p6 h1, #p7 h1, #p8 h1, #p9 h1, #p11 h1, #p12 h1, #p13 h1{
+    /*p1 to p13 TITLES (Except p10)*/
+    background-color: #808080;
+    border-radius: 1rem;
+    border: white solid 3px;
+    width: fit-content;
+    padding: 0.3rem 1.2rem 0.3rem 1.2rem;
+    /*☣☣☣*/
+    color: white;
+    font-weight: 600;
+    font-size: 2rem;
+    text-align: center;
+    /*☣☣☣*/
+    box-shadow: 6px 6px 2px #808080;
+}
+/*☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣*/
+.h_2{
+    /*CUBETAS (p14) / TOPPING APARTE (p15) / TOPPING (black background) (p16) TITLES*/
+    background-color: black;
+    border-radius: 0rem;
+    border: none;
+    width: fit-content;
+    padding: 0rem;
+    margin: 0px auto;
+    /*☣☣☣*/
+    color: white;
+    font-weight: 600;
+    text-align: center;
+    /*☣☣☣*/
+    box-shadow: none;
+}
+/*☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣*/
+.h_3{
+    /*MARISCOS SINALOENSES GLOBAL TITLE*/
+    background-color: black;
+    border-radius: 0rem;
+    border: none;
+    width: fit-content;
+    padding: 0rem;
+    margin: 0px auto;
+    /*☣☣☣*/
+    color: #00E3BD;
+    font-weight: 600;
+    text-align: center;
+    /*☣☣☣*/
+    box-shadow: none;
+}
+/*☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣*/
+.h_4{
+    /*MARISCOS SINALOENSES (p17 to p21) PRODUCTS TITLES*/
+    background-color: black;
+    border-radius: 1rem;
+    border: #00E3BD solid 3px;
+    width: fit-content;
+    padding: 0.3rem 1.2rem 0.3rem 1.2rem;
+    /*☣☣☣*/
+    color: #00E3BD;
+    font-weight: 600;
+    text-align: center;
+    /*☣☣☣*/
+    box-shadow: 6px -6px 2px black;
+}
+/*☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣*/
+.p_data{
+    /*(p1 to p15) - (p17 to p21) PRODUCT DETAILS*/
+    font-family: Poppins;
+    background-color: #e5e5e5;
+    border-radius: 2rem;
+    border: none;
+    height: max-content;
+    padding: 0.4rem;
+}
+/*☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣*/
+#blue_love{
+    /*BLUE LOVE TITLE*/
+    justify-content: center;
+    background-color: none;
+    border-radius: 1rem;
+    border: cyan solid 3px;
+    width: fit-content;
+    padding: 0.3rem 1.2rem 0.3rem 1.2rem;
+    /*☣☣☣*/
+    color: white;
+    font-weight: 600;
+    font-size: 2rem;
+    text-align: center;
+    text-shadow: 0px 0px 20px cyan;
+    /*☣☣☣*/
+    box-shadow: 0px 0px 20px 5px deeppink;
+    margin-left: auto;
+    margin-right: auto;
+}
+#p10{
+    /*BLUE LOVE CONTAINER*/
+    background-image: url("blue_love.png");
+    background-size: cover;
+    display: grid;
+    grid-gap: 2rem;
+    grid-template-columns: 8fr 7fr;
+    grid-template-areas:
+    "p_data_blue_love p_images_blue_love";
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+.p_data_blue_love{
+    /*BLUE LOVE DATA CONTAINER*/
+    grid-area: p_data_blue_love;
+    background-color: none;
+    border-radius: 2rem;
+    border: 2px solid cyan;
+    box-shadow: 0px 0px 20px 3px cyan;
+    height: max-content;
+    padding: 0.4rem;
+}
+.p_images_blue_love{
+    /*BLUE LOVE IMAGES CONTAINER*/
+    grid-area: p_images_blue_love;
+    display: grid;
+    grid-gap: 0rem;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+    "i1 i2"
+    "i3 i4";
+    background-color: none;
+    border-radius: 2rem;
+    border: 2px solid deeppink;
+    box-shadow: 0px 0px 20px 3px deeppink;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+}
+.clear{
+    color: deeppink;
+}
+.priceb{
+    font-weight: 900;
+    font-size: 0.8rem;
+    color: cyan;
+}
+.mxnb{
+    border-radius: 1rem;
+    background-color: deeppink;
+    color: black;
+    font-weight: 600;
+}
+.top_borderb{
+    border-top: cyan solid 2px;
+}
+/*☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣*/
+.p_images{
+    /*(p1 to p15) PRODUCT IMAGES*/
+    display: grid;
+    grid-gap: 0rem;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+    "i1 i2"
+    "i3 i4";
+    /*☣☣☣*/
+    background-color: #e5e5e5;
+    border-radius: 2rem;
+    border: none;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+}
+/*☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣*/
+.p_images2{
+    /*(p17 to p21) PRODUCT IMAGES*/
+    display: grid;
+    grid-gap: 0.5rem;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas:
+    "i1";
+    /*☣☣☣*/
+    background-color: #e5e5e5;
+    border-radius: 2rem;
+    border: none;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+}
+/*☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣*/
+.i1{grid-area: i1;}
+.i2{grid-area: i2;}
+.i3{grid-area: i3;}
+.i4{grid-area: i4;}
+/*☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣*/
+.image_common{
+    width: 100%;
+    display: block;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+/*☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣*/
+#p14 .p_data, #p14 .p_images, #p15 .p_data, #p15 .p_images{
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+}
+/*☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣*/
+.p_header{
+    /*(p14 to p16) TITLE CONTAINER*/
+    padding: 0.5rem;
+    background-color: black;
+}
+/*☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣*/
+.topping_section{
+    grid-area: topping_section;
+    text-align: center;
+    color: white;
+}
+h3{
+    color: white;
+    font-weight: 600;
+    text-align: center;
+    padding: 0.4rem;
+}
+.top_images{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.card{
+    margin: 1rem 0.15rem 0.5rem 0.15rem;
+    padding: 0rem;
+}
+.top_image{
+    width: 100px;
+}
+p{
+    text-transform: uppercase;
+    font-size: 0.7rem;
+    width: 100px;
+}
+.number{
+    font-size: 1rem;
+    font-weight: 600;
+    color: chartreuse;
+}
+/*☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣*/
+#mariscos{
+    background-color: black; 
+    padding: 2rem;
+}
+/*☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣*/
+table, tr, td{
+    border-collapse: collapse;
+    text-align: left;
+}
+table{
+    width: 100%;
+}
+.right{
+    text-align: right;
+}
+.center{
+    text-align: center;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+/* Left alignment automatically */
+.normal{
+    font-weight: 900;
+    font-size: 1rem;
+}
+.small{
+    font-weight: 400;
+    font-size: 0.8rem;
+}
+.price{
+    font-weight: 900;
+    font-size: 0.8rem;
+    color: #424242;
+}
+.mxn{
+    border-radius: 1rem;
+    background-color: black;
+    color: red;
+    font-weight: 600;
+}
+.mxn2{
+    border-radius: 1rem;
+    background-color: black;
+    color: white;
+    font-weight: 600;
+}
+.bottom_border{
+    border-bottom: #424242 solid 2px;
+}
+.top_border{
+    border-top: #424242 solid 2px;
+}
+/* END PRODUCTS PARTICULAR STRUCTURE */
+/* ⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙ */
+/* ⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙ */
+/* ⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙ */
+
+
+/* ⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙ */
+/* ⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙ */
+/* ⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙ */
+/* MENU FOOTER */
+#foot{
+    background-image: url("wood.jpg");
+    padding: 2rem;
+    text-shadow: 0px 0px 10px black;
+    box-shadow: 0px 0px 50px 2rem #371a0b;
+}
+/*
+#foot table, #foot tr, #foot td{
+    border: 2px solid chartreuse;
+}
+*/
+.red{
+    color: #be1a0e;
+}
+.bolder{
+    font-weight: 600;
+}
+.foot_content{
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+.foot_content2{
+    color: white;
+    font-size: 0.8rem;
+    font-weight: 400;
+}
+.foot_content3{
+    color: white;
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+#registered{
+    font-size: 1.8rem;
+}
+#whatsapp_container{
+    /*td containing whatsapp image*/
+    padding-top: 0.2rem;
+    padding-bottom: 0.2rem;
+}
+#instagram_container{
+    /*td containing instagram image*/
+    padding-top: 0.2rem;
+    padding-bottom: 0.2rem;
+}
+#facebook_container{
+    /*td containing facebook image*/
+    padding-top: 0.2rem;
+    padding-bottom: 0.2rem;
+}
+.logo_digital{
+    /*WhatsApp image*/
+    width: 30px;
+    display: flex;
+}
+a{
+    width: 50%;
+}
+.social_buttonw{
+    text-decoration: none;
+    color: white;
+    /*text-shadow: 0px 0px 5px black;*/
+    background-color: #13990a;
+    border: 3px solid white;
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    border-radius: 0.5rem;
+    font-size: 0.9rem;
+}
+.social_buttoni{
+    text-decoration: none;
+    color: white;
+    /*text-shadow: 0px 0px 5px black;*/
+    background-color: #e21234;
+    border: 3px solid #7939ab;
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    border-radius: 0.5rem;
+    font-size: 0.9rem;
+}
+.social_buttonf{
+    text-decoration: none;
+    color: white;
+    /*text-shadow: 0px 0px 5px black;*/
+    background-color: #1778f2;
+    border: 3px solid white;
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    border-radius: 0.5rem;
+    font-size: 0.9rem;
+}
+.social_table{
+    width: 230px;
+}
+.social_td{
+    width: 100px;
+}
+/*
+table, td, tr{
+    border: 1px solid white;
+}
+*/
+/* END MENU FOOTER */
+/* ⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙ */
+/* ⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙ */
+/* ⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙ */
+
+
+/* ⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙ */
+/* ⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙ */
+/* ⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙ */
+/* REACTIVITY */
+@media only screen and (max-width: 1000px){
+    /*Phone Horizontal*/
+    #menu{
+        grid-gap: 3rem;
+    }
+    /*☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣*/
+    #p1, #p2, #p3, #p4, #p5, #p6, #p7, #p8, #p9, #p10, #p11, #p12, #p13{
+        display: grid;
+        grid-gap: 0.5rem;
+        grid-template-columns: 9fr 3fr; /*12 - 3*/
+        grid-template-rows: 1fr;
+        grid-template-areas:
+        "p_data p_images";
+        /*☣☣☣*/
+        font-family: Poppins;
+    }
+    #p10{
+        display: grid;
+        grid-gap: 1rem;
+        grid-template-columns: 9fr 3fr;
+        grid-template-rows: 1fr;
+        grid-template-areas:
+        "p_data_blue_love p_images_blue_love";
+        /*☣☣☣*/
+        font-family: Poppins;
+    }
+    /*☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣*/
+    .p_data{
+        grid-area: p_data;
+    }
+    .p_data_blue_love{
+        grid-area: p_data_blue_love;
+    }
+    .p_images{
+        grid-area: p_images;
+        display: grid;
+        grid-gap: 0.5rem;
+        grid-template-columns: 3fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        grid-template-areas:
+        "i1"
+        "i2"
+        "i3"
+        "i4";
+        /*☣☣☣*/
+        font-family: Poppins;
+    }
+    .p_images_blue_love{
+        grid-area: p_images_blue_love;
+        display: grid;
+        grid-gap: 0.5rem;
+        grid-template-columns: 3fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        grid-template-areas:
+        "i1"
+        "i2"
+        "i3"
+        "i4";
+        /*☣☣☣*/
+        font-family: Poppins;
+    }
+    /*☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣*/
+    #p14, #p15{
+        display: grid;
+        grid-gap: 0.5rem;
+        grid-template-columns: 9fr 3fr;
+        grid-template-areas:
+        "p_header p_header"
+        "p_data p_images";
+        /*☣☣☣*/
+        font-family: Poppins;
+    }
+    /*☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣*/
+    .card{
+        /*Topping card: Image & name*/
+        margin: 1rem 0.15rem 0.5rem 0.15rem;
+    }
+    .top_image{
+        /*Topping image*/
+        width: 100px;
+    }
+    /*☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣*/
+    #p17, #p18, #p19, #p20, #p21{
+        display: grid;
+        grid-gap: 0.5rem;
+        grid-template-columns: 5fr 12fr;
+        grid-template-areas:
+        "p_images p_data";
+        /*☣☣☣*/
+        font-family: Poppins;
+    }
+}
+@media only screen and (max-width: 550px){
+    /*Phone Vertical*/
+    #menu{
+        grid-gap: 5rem;
+    }
+    /*☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣*/
+    #p1, #p2, #p3, #p4, #p5, #p6, #p7, #p8, #p9, #p10, #p11, #p12, #p13{
+        display: grid;
+        grid-gap: 0.5rem;
+        grid-template-columns: 15fr;
+        grid-template-areas:
+        "p_data"
+        "p_images";
+        /*☣☣☣*/
+        font-family: Poppins;
+    }
+    #p10{
+        display: grid;
+        grid-gap: 2rem;
+        grid-template-columns: 15fr;
+        grid-template-areas:
+        "p_data_blue_love"
+        "p_images_blue_love";
+        /*☣☣☣*/
+        font-family: Poppins;
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+    }
+    /*☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣*/
+    .p_data{
+        grid-area: p_data;
+    }
+    .p_data_blue_love{
+        grid-area: p_data_blue_love;
+    }
+    .p_images{
+        grid-area: p_images;
+        display: grid;
+        grid-gap: 0.5rem;
+        grid-template-columns: 3fr 3fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas:
+        "i1 i2"
+        "i3 i4";
+        /*☣☣☣*/
+        font-family: Poppins;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
+    .p_images_blue_love{
+        grid-area: p_images_blue_love;
+        display: grid;
+        grid-gap: 0.5rem;
+        grid-template-columns: 3fr 3fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas:
+        "i1 i2"
+        "i3 i4";
+        /*☣☣☣*/
+        font-family: Poppins;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
+    .image_common{
+        width: 80%;
+    }
+    /*☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣*/
+    #p14, #p15{
+        display: grid;
+        grid-template-columns: 15fr;
+        grid-template-areas:
+        "p_header"
+        "p_data"
+        "p_images";
+    }
+    #p14 .p_data, #p14 .p_images, #p15 .p_data, #p15 .p_images{
+        margin-left: 0.5rem;
+        margin-right: 0.5rem;
+    }
+    /*☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣*/
+    .card{
+        margin: 1rem 0.15rem 0.5rem 0.15rem;
+        padding: 0rem;
+    }
+    .top_image{
+        width: 100px;
+    }
+    /*☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣☣*/
+    #p17, #p18, #p19, #p20, #p21{
+        display: grid;
+        grid-gap: 0.5rem;
+        grid-template-columns: 15fr;
+        grid-template-areas:
+        "p_images"
+        "p_data";
+        /*☣☣☣*/
+        font-family: Poppins;
+    }
+}
+/* END REACTIVITY */
+/* ⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙ */
+/* ⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙ */
+/* ⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙⚙ */
